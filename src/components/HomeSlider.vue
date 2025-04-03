@@ -5,7 +5,7 @@ const slides = [
   {
     title: "¡Quien Soy!",
     text: "Mi nombre es Italo Cianci Chiriboga y soy un artista digital que fusiona lo psicodélico con el surrealismo, creando mundos donde los ojos son testigos de realidades ocultas. Me inspiran la naturaleza, los animales y los conceptos abstractos, buscando que cada obra revele algo nuevo con cada mirada. Desde pequeño, el arte ha sido mi lenguaje; llenaba de dibujos la parte de atrás de mis cuadernos mientras mi familia, siempre envuelta en la creatividad, sembraba en mí esta pasión. Hoy, a través de la ilustración digital, sigo explorando lo desconocido y compartiendo mi visión en redes y exposiciones, donde invito a otros a perderse y encontrarse en mis creaciones.",
-    image: "/images/manzana.png",
+    image: "/images/Yovangouh.jpeg",
     color: "rgb(255, 89, 0)",
   },
   {

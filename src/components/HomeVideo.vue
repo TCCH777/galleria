@@ -1,5 +1,14 @@
 <template>
-  <div class="gallery-container">
+  <div class="video-container">
+    <video autoplay loop muted playsinline class="background-video">
+      <source
+        src="https://firebasestorage.googleapis.com/v0/b/portafolio-4ec64.firebasestorage.app/o/yowiiii.mp4?alt=media&token=e10c227f-3c17-439f-aca7-b141fe78ef69"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+  <div v-if="showGallery" class="gallery-container">
     <h1 class="gallery-title">Gallery</h1>
     <div class="image-grid" @scroll="handleScroll" ref="scrollContainer">
       <div
@@ -31,6 +40,7 @@ const props = defineProps({
   images: Array,
 });
 
+const showGallery = ref(false);
 const selectedImage = ref(null);
 const scrollContainer = ref(null);
 const itemsPerPage = 6;
@@ -54,11 +64,32 @@ const selectImage = (image) => {
 </script>
 
 <style scoped>
+.video-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding: 25px;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
 .gallery-container {
   text-align: center;
   background-color: #222;
   color: #90ee90;
-  padding: 40px;
+  padding: 20px;
 }
 .gallery-title {
   font-size: 2rem;
@@ -67,14 +98,15 @@ const selectImage = (image) => {
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  gap: 30px;
+  gap: 20px;
   overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 600px;
+  max-height: 500px;
   padding: 10px;
 }
 .image-wrapper {
+  background: #333;
+  padding: 20px;
+  border-radius: 15px;
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -82,9 +114,9 @@ const selectImage = (image) => {
   transform: scale(1.1);
 }
 .image {
-  width: 85%;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 .detail-view {
   position: fixed;
@@ -92,7 +124,7 @@ const selectImage = (image) => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
