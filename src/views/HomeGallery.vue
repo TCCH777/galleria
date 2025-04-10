@@ -116,14 +116,26 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+  .gallery-container {
+    padding: 20px 10px;
+    background-color: #222;
+    color: #90ee90;
+    overflow-y: auto;
+    max-height: none;
+  }
+
+  .gallery-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
   .image-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    max-height: none;
     gap: 20px;
-    padding-bottom: 80px; /* espacio para que no quede pegado abajo */
+    max-height: none;
+    overflow: visible;
   }
 
   .image-wrapper {
@@ -148,55 +160,48 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 10px;
+    justify-content: flex-start;
+    color: white;
+    padding: 20px;
     overflow-y: auto;
-    z-index: 9999;
-    touch-action: manipulation;
   }
 
   .detail-image {
-    width: 100%;
+    width: 90%;
     height: auto;
+    max-height: 40vh;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .detail-info {
-    width: 100%;
-    flex: 1;
+    width: 90%;
+    max-height: 50vh;
     overflow-y: auto;
-    color: white;
-    text-align: center;
     padding: 10px;
+    text-align: center;
     font-size: 14px;
     line-height: 1.5;
   }
 
   .detail-info h2 {
-    margin-bottom: 10px;
     font-size: 1.2rem;
-    font-weight: bold;
+    margin-bottom: 10px;
   }
 
   .detail-info p {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    margin-top: 15px;
+    padding: 10px 20px;
     background: #90ee90;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
-    margin-top: 20px;
-    touch-action: manipulation;
-  }
-
-  button:active {
-    background-color: #76d376;
+    font-size: 14px;
+    width: auto;
   }
 }
 </style>
