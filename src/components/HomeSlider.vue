@@ -126,4 +126,39 @@ h4 {
 .right {
   right: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .text-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .image-content {
+    height: 50vh;
+    margin-top: 20px;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+}
 </style>

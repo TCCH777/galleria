@@ -82,7 +82,7 @@ const selectImage = (image) => {
   transform: scale(1.1);
 }
 .image {
-  width: 85%;
+  width: 75%;
   height: auto;
   border-radius: 10px;
 }
