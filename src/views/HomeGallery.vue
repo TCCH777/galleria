@@ -123,11 +123,19 @@ button {
     overflow-y: auto;
     max-height: none;
     gap: 20px;
+    padding-bottom: 80px; /* espacio para que no quede pegado abajo */
+  }
+
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .image {
     width: 90%;
     height: auto;
+    border-radius: 10px;
   }
 
   .detail-view {
@@ -136,51 +144,58 @@ button {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgb(0, 0, 0);
+    background: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 20px 10px;
     overflow-y: auto;
     z-index: 9999;
+    touch-action: manipulation;
   }
 
   .detail-image {
-    width: 90%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
   }
 
   .detail-info {
-    width: 90%;
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
     color: white;
     text-align: center;
-    overflow-y: auto;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .detail-info h2 {
     margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   .detail-info p {
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #90ee90;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background: #90ee90;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 20px;
+    touch-action: manipulation;
   }
 
-  button:hover {
+  button:active {
     background-color: #76d376;
   }
 }
