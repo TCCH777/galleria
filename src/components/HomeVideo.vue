@@ -8,6 +8,8 @@
     </video>
   </div>
 
+  <div class="scroll-down-indicator">&#x25BC;</div>
+
   <div v-if="showGallery" class="gallery-container">
     <h1 class="gallery-title">Gallery</h1>
     <div class="image-grid" @scroll="handleScroll" ref="scrollContainer">
@@ -147,6 +149,11 @@ button {
   cursor: pointer;
 }
 
+.scroll-down-indicator {
+  position: absolute;
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .video-container {
     padding: 0;
@@ -157,6 +164,30 @@ button {
   .background-video {
     object-fit: contain;
     width: 100vw;
+  }
+
+  .scroll-down-indicator {
+    position: absolute;
+    display: block;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: rgb(0, 148, 44);
+    z-index: 2;
+    animation: bounce 2s infinite;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+    }
   }
 }
 </style>

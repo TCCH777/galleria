@@ -16,6 +16,27 @@ const slides = [
   },
 ];
 
+let touchStartX = 0;
+let touchEndX = 0;
+
+const handleTouchStart = (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+};
+
+const handleTouchEnd = (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleGesture();
+};
+
+const handleGesture = () => {
+  const swipeDistance = touchStartX - touchEndX;
+  if (swipeDistance > 50) {
+    nextSlide(); // swipe left
+  } else if (swipeDistance < -50) {
+    prevSlide(); // swipe right
+  }
+};
+
 const currentIndex = ref(0);
 
 const nextSlide = () => {
@@ -45,6 +66,27 @@ const prevSlide = () => {
     </div>
     <button class="arrow left" @click="prevSlide">&#9664;</button>
     <button class="arrow right" @click="nextSlide">&#9654;</button>
+  </div>
+
+  <div class="slider" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
+    <div
+      class="slide"
+      :style="{ transform: `translateX(-${currentIndex * 50}%)` }"
+    >
+      <div v-for="(slide, index) in slides" :key="index" class="container">
+        <div class="text-content">
+          <h1 :style="{ color: slide.color }">{{ slide.title }}</h1>
+          <h4>{{ slide.text }}</h4>
+        </div>
+        <div class="image-content">
+          <img :src="slide.image" alt="Imagen representativa" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Flechas -->
+    <button class="arrow left" @click="prevSlide">&#x276E;</button>
+    <button class="arrow right" @click="nextSlide">&#x276F;</button>
   </div>
 </template>
 
@@ -158,7 +200,21 @@ h4 {
   }
 
   .arrow {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    opacity: 0.8;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+    backdrop-filter: blur(5px);
+  }
+
+  .arrow.left {
+    left: 5px;
+  }
+
+  .arrow.right {
+    right: 5px;
   }
 }
 </style>
