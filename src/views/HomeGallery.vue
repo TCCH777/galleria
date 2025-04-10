@@ -114,4 +114,74 @@ button {
   border: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    max-height: none;
+    gap: 20px;
+  }
+
+  .image {
+    width: 90%;
+    height: auto;
+  }
+
+  .detail-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 9999;
+  }
+
+  .detail-image {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .detail-info {
+    width: 90%;
+    color: white;
+    text-align: center;
+    overflow-y: auto;
+  }
+
+  .detail-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  .detail-info p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #90ee90;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #76d376;
+  }
+}
 </style>

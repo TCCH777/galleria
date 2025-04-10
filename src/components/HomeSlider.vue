@@ -49,25 +49,6 @@ const prevSlide = () => {
 </script>
 
 <template>
-  <div class="slider">
-    <div
-      class="slide"
-      :style="{ transform: `translateX(-${currentIndex * 50}%)` }"
-    >
-      <div v-for="(slide, index) in slides" :key="index" class="container">
-        <div class="text-content">
-          <h1 :style="{ color: slide.color }">{{ slide.title }}</h1>
-          <h4>{{ slide.text }}</h4>
-        </div>
-        <div class="image-content">
-          <img :src="slide.image" alt="Imagen representativa" />
-        </div>
-      </div>
-    </div>
-    <button class="arrow left" @click="prevSlide">&#9664;</button>
-    <button class="arrow right" @click="nextSlide">&#9654;</button>
-  </div>
-
   <div class="slider" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
     <div
       class="slide"
