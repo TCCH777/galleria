@@ -203,5 +203,111 @@ button {
     font-size: 14px;
     width: auto;
   }
+  .gallery-container {
+    padding: 20px 10px;
+    background-color: #222;
+    color: #90ee90;
+    overflow-y: auto;
+    max-height: none;
+  }
+
+  .gallery-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mantener grilla en móviles */
+    align-items: center;
+    gap: 20px;
+    max-height: none;
+    overflow-y: auto; /* Asegura el scroll en móvil */
+    overflow-x: hidden;
+    padding: 10px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .detail-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .detail-image {
+    width: 90%;
+    height: auto;
+    max-height: 40vh;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .detail-info {
+    width: 90%;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .detail-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .detail-info p {
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 14px 24px; /* Botones más grandes en móvil */
+    background: #90ee90;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Que ocupe el ancho en móvil */
+  }
+
+  /* Botón extra opcional para compartir */
+  .share-button {
+    margin-top: 10px;
+    padding: 14px 24px;
+    background: #4caf50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .image-grid {
+    max-height: 80vh;
+    overflow-y: auto !important;
+  }
 }
 </style>
